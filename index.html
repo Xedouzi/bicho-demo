@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bicho é o Bicho Pet Shop — Banho, tosa e veterinário em Cravinhos, SP</title>
+<meta name="description" content="Pet shop em Cravinhos com banho e tosa, atendimento veterinário e loja. Av. Pedro Duarte Amoroso, 156. Agende pelo WhatsApp.">
+<!-- DEMO: remover a linha abaixo quando publicar no dominio definitivo do cliente -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "Bicho é o Bicho Pet Shop",
+  "telephone": "+55-16-3951-1610",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Pedro Duarte Amoroso, 156",
+    "addressLocality": "Cravinhos",
+    "addressRegion": "SP",
+    "postalCode": "14140-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/bichoeobichopetshop/", "https://www.facebook.com/bichoeobicho/"]
+}
+</script>
+<style>
+  :root {
+    --areia: #F5EDDC;
+    --areia-2: #EFE4CC;
+    --tinta: #26221C;
+    --tinta-2: #5A5347;
+    --azul: #1F4E79;
+    --azul-2: #17406A;
+    --ambar: #82500F;   /* 5.8:1 sobre a areia - passa AA em texto normal */
+    --filete: #D9CDB5;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    font-family: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 1.0625rem; line-height: 1.6;
+    color: var(--tinta); background: var(--areia);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .marca { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100; }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---------- cabecalho ---------- */
+  header { padding: 1.4rem 0; }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+  .marca { font-size: 1.35rem; font-weight: 600; text-decoration: none; color: var(--azul); }
+  nav ul { list-style: none; display: flex; gap: 1.6rem; font-size: .98rem; font-weight: 600; }
+  nav a { text-decoration: none; color: var(--tinta-2); display: inline-block; padding: .65rem 0; margin: -.65rem 0; }
+  nav a:hover { color: var(--azul); text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ---------- abertura ---------- */
+  .hero { padding: 4.5rem 0 4rem; border-top: 1px solid var(--filete); }
+  .hero h1 {
+    font-size: clamp(2.6rem, 6.8vw, 5.2rem); line-height: 1.0; font-weight: 500;
+    letter-spacing: -.02em; max-width: 14ch; color: var(--tinta);
+  }
+  .hero h1 span { color: var(--azul); }
+  .nota { margin-top: 1.5rem; font-size: 1.15rem; color: var(--tinta-2); }
+  .nota strong { color: var(--ambar); font-weight: 700; font-size: 1.35rem; font-family: "Fraunces", serif; }
+  .hero p.lead { margin-top: 1rem; max-width: 44ch; font-size: 1.2rem; color: var(--tinta-2); }
+  .cta { margin-top: 2.25rem; display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 1rem 1.6rem; background: var(--azul); color: #fff;
+    text-decoration: none; font-weight: 700; font-size: 1.05rem; border-radius: 999px;
+  }
+  .btn:hover { background: var(--azul-2); }
+  .tel { text-decoration: none; font-weight: 600; font-size: 1.05rem; display: inline-block; padding: .75rem 0; margin: -.75rem 0; }
+  .tel:hover { color: var(--azul); }
+
+  /* ---------- secoes ---------- */
+  section { padding: 4rem 0; border-top: 1px solid var(--filete); }
+  h2 { font-size: 2rem; font-weight: 500; letter-spacing: -.01em; margin-bottom: 2rem; }
+
+  .servicos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .servico h3 { font-size: 1.45rem; font-weight: 600; margin-bottom: .5rem; color: var(--azul); }
+  .servico p { color: var(--tinta-2); }
+  .servico ul { margin-top: .8rem; padding-left: 1.1rem; color: var(--tinta-2); font-size: 1rem; }
+  .servico li { margin-top: .25rem; }
+
+  .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; counter-reset: passo; }
+  .passo { position: relative; padding-top: 1rem; border-top: 3px solid var(--azul); }
+  .passo::before {
+    counter-increment: passo; content: counter(passo);
+    position: absolute; top: -1.9rem; left: 0;
+    font-family: "Fraunces", serif; font-size: 1.3rem; font-weight: 600; color: var(--azul);
+  }
+  .passo h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: .4rem; }
+  .passo p { color: var(--tinta-2); }
+
+  .loja { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; }
+  .loja dl { display: grid; grid-template-columns: auto 1fr; gap: .7rem 1.5rem; }
+  .loja dt { color: var(--tinta-2); font-weight: 600; }
+  .loja dd a { text-decoration: none; display: inline-block; padding: .5rem 0; margin: -.5rem 0; }
+  .loja dd a:hover { color: var(--azul); text-decoration: underline; }
+  .horario { display: grid; grid-template-columns: auto 1fr; gap: .2rem 1rem; }
+  .mapa { width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--filete); display: block; background: var(--areia-2); border-radius: 12px; }
+
+  footer { padding: 2.5rem 0 3rem; border-top: 1px solid var(--filete); color: var(--tinta-2); font-size: .95rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+  footer a { text-decoration: none; display: inline-block; padding: .75rem 0; margin: -.75rem 0; font-weight: 600; }
+  footer a:hover { color: var(--azul); text-decoration: underline; text-underline-offset: 4px; }
+  footer .redes { display: flex; gap: 1.5rem; }
+
+  /* tablet: linhas horizontais */
+  @media (max-width: 900px) {
+    .hero { padding: 3.25rem 0 3rem; }
+    nav ul { flex-wrap: wrap; gap: .4rem 1.25rem; font-size: .95rem; }
+    nav a { white-space: nowrap; }
+
+    .servicos, .passos { grid-template-columns: 1fr; gap: 0; }
+    .servico {
+      display: grid; grid-template-columns: 9rem 1fr; gap: 0 1.5rem; align-items: start;
+      padding: 1.5rem 0; border-top: 1px solid var(--filete);
+    }
+    .servico:last-child { padding-bottom: 0; }
+    .servico h3 { margin-bottom: 0; }
+    .servico p, .servico ul { grid-column: 2; }
+    .servico ul { margin-top: .5rem; }
+
+    .passo {
+      display: grid; grid-template-columns: 9rem 1fr; gap: 0 1.5rem; align-items: start;
+      padding: 1.5rem 0; border-top: 1px solid var(--filete);
+    }
+    .passo:last-child { padding-bottom: 0; }
+    .passo::before { position: static; grid-column: 1; grid-row: 1 / span 2; font-size: 2rem; line-height: 1; }
+    .passo h3, .passo p { grid-column: 2; }
+
+    .loja { grid-template-columns: 1fr; gap: 2rem; }
+    .mapa { aspect-ratio: 16 / 9; max-height: 340px; }
+  }
+
+  /* celular: empilhado */
+  @media (max-width: 640px) {
+    .servico, .passo { grid-template-columns: 1fr; }
+    .servico p, .servico ul, .passo h3, .passo p { grid-column: 1; }
+    .servico h3 { margin-bottom: .4rem; }
+    .passo::before { grid-row: auto; font-size: 1.3rem; margin-bottom: .3rem; }
+    .loja dl { grid-template-columns: 1fr; gap: .15rem 0; }
+    .loja dt { margin-top: .8rem; }
+    .loja dt:first-child { margin-top: 0; }
+    .btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="marca" href="#">Bicho é o Bicho</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#agendar">Como agendar</a></li>
+        <li><a href="#loja">Onde fica</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>Banho, tosa e veterinário <span>em Cravinhos.</span></h1>
+      <p class="nota"><strong>4,8</strong> em 127 avaliações no Google</p>
+      <p class="lead">Pet shop de bairro, na Av. Pedro Duarte Amoroso. Você manda mensagem, a gente confirma o horário e cuida do resto.</p>
+      <div class="cta">
+        <a class="btn" href="https://wa.me/5516996148486?text=Oi%21%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Bicho%20%C3%A9%20o%20Bicho.">Agendar pelo WhatsApp</a>
+        <a class="tel" href="tel:+551639511610">(16) 3951-1610</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <h2>O que a gente faz</h2>
+      <div class="servicos">
+        <div class="servico">
+          <h3>Banho e tosa</h3>
+          <p>Cão e gato, de todos os portes, com horário marcado.</p>
+          <ul>
+            <li>Banho com secagem</li>
+            <li>Tosa higiênica e tosa completa</li>
+            <li>Corte de unha e limpeza de ouvido</li>
+          </ul>
+        </div>
+        <div class="servico">
+          <h3>Veterinário</h3>
+          <p>Atendimento clínico no mesmo lugar do banho, sem precisar sair de Cravinhos.</p>
+          <ul>
+            <li>Consulta</li>
+            <li>Vacinação e vermifugação</li>
+            <li>Orientação sobre alimentação e cuidados</li>
+          </ul>
+        </div>
+        <div class="servico">
+          <h3>Loja</h3>
+          <p>Ração, petisco, remédio e acessório pra levar na hora.</p>
+          <ul>
+            <li>Ração seca e úmida</li>
+            <li>Antipulgas e vermífugos</li>
+            <li>Coleira, cama, brinquedo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendar">
+    <div class="wrap">
+      <h2>Como agendar</h2>
+      <div class="passos">
+        <div class="passo">
+          <h3>Manda um WhatsApp</h3>
+          <p>Diz o nome do bichinho, o porte e o que você precisa: banho, tosa ou consulta.</p>
+        </div>
+        <div class="passo">
+          <h3>A gente confirma o horário</h3>
+          <p>Você recebe dia e hora certos. Sem fila, sem espera na loja.</p>
+        </div>
+        <div class="passo">
+          <h3>Traz e busca</h3>
+          <p>Deixa na hora marcada e a gente avisa quando estiver pronto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loja">
+    <div class="wrap">
+      <h2>Onde fica</h2>
+      <div class="loja">
+        <dl>
+          <dt>Endereço</dt>
+          <dd>Av. Pedro Duarte Amoroso, 156 — Cravinhos, SP, 14140-000</dd>
+          <dt>Horário</dt>
+          <dd>
+            <div class="horario">
+              <span>Segunda a sexta</span><span>8h às 18h</span>
+              <span>Sábado</span><span>8h às 13h</span>
+              <span>Domingo</span><span>fechado</span>
+            </div>
+          </dd>
+          <dt>WhatsApp</dt>
+          <dd><a href="https://wa.me/5516996148486">(16) 99614-8486</a></dd>
+          <dt>Telefone</dt>
+          <dd><a href="tel:+551639511610">(16) 3951-1610</a></dd>
+        </dl>
+        <iframe class="mapa" title="Localização do Bicho é o Bicho no Google Maps"
+          src="https://www.google.com/maps?q=Av.+Pedro+Duarte+Amoroso,+156,+Cravinhos,+SP&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div>Bicho é o Bicho Pet Shop</div>
+      <div>Av. Pedro Duarte Amoroso, 156, Cravinhos</div>
+    </div>
+    <div class="redes">
+      <a href="https://www.instagram.com/bichoeobichopetshop/">Instagram</a>
+      <a href="https://www.facebook.com/bichoeobicho/">Facebook</a>
+      <a href="https://wa.me/5516996148486">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
