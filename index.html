@@ -7,6 +7,7 @@
 <meta name="description" content="Pet shop em Cravinhos com banho e tosa, atendimento veterinário e loja. Av. Pedro Duarte Amoroso, 156. Agende pelo WhatsApp.">
 <!-- DEMO: remover a linha abaixo quando publicar no dominio definitivo do cliente -->
 <meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,15 +34,33 @@
 </script>
 <style>
   :root {
+    color-scheme: light dark;
     --areia: #F5EDDC;
     --areia-2: #EFE4CC;
     --tinta: #26221C;
     --tinta-2: #5A5347;
-    --azul: #1F4E79;
-    --azul-2: #17406A;
-    --ambar: #82500F;   /* 5.8:1 sobre a areia - passa AA em texto normal */
+    --azul: #1F4E79;          /* titulos e links em destaque */
+    --botao: #1F4E79;         /* fundo do botao */
+    --botao-hover: #17406A;
+    --botao-texto: #FFFFFF;
+    --ambar: #82500F;         /* 5.8:1 sobre a areia - passa AA em texto normal */
     --filete: #D9CDB5;
     --max: 1120px;
+  }
+  /* modo escuro desenhado: o navegador usa este em vez de inverter a pagina sozinho */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --areia: #1F1A12;
+      --areia-2: #2A2419;
+      --tinta: #F1EADB;
+      --tinta-2: #C9BFAA;
+      --azul: #8FBDE8;
+      --botao: #2E6DA6;
+      --botao-hover: #3A7EBB;
+      --botao-texto: #FFFFFF;
+      --ambar: #E3A94A;
+      --filete: #3D352A;
+    }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -78,10 +97,20 @@
   .hero p.lead { margin-top: 1rem; max-width: 44ch; font-size: 1.2rem; color: var(--tinta-2); }
   .cta { margin-top: 2.25rem; display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
   .btn {
-    display: inline-block; padding: 1rem 1.6rem; background: var(--azul); color: #fff;
+    display: inline-block; padding: 1rem 1.6rem; background: var(--botao); color: var(--botao-texto);
     text-decoration: none; font-weight: 700; font-size: 1.05rem; border-radius: 999px;
   }
-  .btn:hover { background: var(--azul-2); }
+  .btn:hover { background: var(--botao-hover); }
+
+  /* abertura em duas colunas: texto + foto */
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; }
+  .hero-foto { margin: 0; }
+  .hero-foto img, .hero-foto .vazio {
+    display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+    border-radius: 20px; background: var(--areia-2);
+  }
+  .hero-foto .vazio { display: grid; place-items: center; color: var(--tinta-2); font-style: italic; text-align: center; padding: 1rem; }
+  .hero-foto figcaption { margin-top: .6rem; font-size: .9rem; color: var(--tinta-2); }
   .tel { text-decoration: none; font-weight: 600; font-size: 1.05rem; display: inline-block; padding: .75rem 0; margin: -.75rem 0; }
   .tel:hover { color: var(--azul); }
 
@@ -145,6 +174,9 @@
 
     .loja { grid-template-columns: 1fr; gap: 2rem; }
     .mapa { aspect-ratio: 16 / 9; max-height: 340px; }
+
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-foto img, .hero-foto .vazio { aspect-ratio: 16 / 10; max-height: 380px; }
   }
 
   /* celular: empilhado */
@@ -177,14 +209,19 @@
 
 <main>
   <div class="hero">
-    <div class="wrap">
-      <h1>Banho, tosa e veterinário <span>em Cravinhos.</span></h1>
-      <p class="nota"><strong>4,8</strong> em 127 avaliações no Google</p>
-      <p class="lead">Pet shop de bairro, na Av. Pedro Duarte Amoroso. Você manda mensagem, a gente confirma o horário e cuida do resto.</p>
-      <div class="cta">
-        <a class="btn" href="https://wa.me/5516996148486?text=Oi%21%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Bicho%20%C3%A9%20o%20Bicho.">Agendar pelo WhatsApp</a>
-        <a class="tel" href="tel:+551639511610">(16) 3951-1610</a>
+    <div class="wrap hero-grid">
+      <div class="hero-texto">
+        <h1>Banho, tosa e veterinário <span>em Cravinhos.</span></h1>
+        <p class="nota"><strong>4,8</strong> em 127 avaliações no Google</p>
+        <p class="lead">Pet shop de bairro, na Av. Pedro Duarte Amoroso. Você manda mensagem, a gente confirma o horário e cuida do resto.</p>
+        <div class="cta">
+          <a class="btn" href="https://wa.me/5516996148486?text=Oi%21%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Bicho%20%C3%A9%20o%20Bicho.">Agendar pelo WhatsApp</a>
+          <a class="tel" href="tel:+551639511610">(16) 3951-1610</a>
+        </div>
       </div>
+      <figure class="hero-foto">
+        <div class="vazio" role="img" aria-label="Espaço reservado para foto de um cachorro no banho">Foto: cachorro no banho ou na tosa, tirada na loja</div>
+      </figure>
     </div>
   </div>
 
