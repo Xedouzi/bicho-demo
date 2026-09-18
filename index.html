@@ -86,7 +86,7 @@
   nav a:hover { color: var(--azul); text-decoration: underline; text-underline-offset: 4px; }
 
   /* ---------- abertura ---------- */
-  .hero { padding: 4.5rem 0 4rem; border-top: 1px solid var(--filete); }
+  .hero { padding: 3.5rem 0 3.5rem; border-top: 1px solid var(--filete); }
   .hero h1 {
     font-size: clamp(2.6rem, 6.8vw, 5.2rem); line-height: 1.0; font-weight: 500;
     letter-spacing: -.02em; max-width: 14ch; color: var(--tinta);
@@ -103,10 +103,11 @@
   .btn:hover { background: var(--botao-hover); }
 
   /* abertura em duas colunas: texto + foto */
-  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; }
+  /* foto e coadjuvante: no maximo 360px de largura, pra o botao nao cair pra fora da tela */
+  .hero-grid { display: grid; grid-template-columns: 1fr minmax(260px, 360px); gap: 4rem; align-items: center; }
   .hero-foto { margin: 0; }
   .hero-foto img, .hero-foto .vazio {
-    display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+    display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
     border-radius: 20px; background: var(--areia-2);
   }
   .hero-foto .vazio { display: grid; place-items: center; color: var(--tinta-2); font-style: italic; text-align: center; padding: 1rem; }
