@@ -103,11 +103,12 @@
   .btn:hover { background: var(--botao-hover); }
 
   /* abertura em duas colunas: texto + foto */
-  /* foto e coadjuvante: no maximo 360px de largura, pra o botao nao cair pra fora da tela */
-  .hero-grid { display: grid; grid-template-columns: 1fr minmax(260px, 360px); gap: 4rem; align-items: center; }
-  .hero-foto { margin: 0; }
+  /* foto com a altura exata do bloco de texto: a linha do grid e definida pelo texto,
+     a figura estica junto e a imagem preenche a figura por posicao absoluta */
+  .hero-grid { display: grid; grid-template-columns: 1fr minmax(300px, 420px); gap: 4rem; align-items: stretch; }
+  .hero-foto { margin: 0; position: relative; min-height: 380px; }
   .hero-foto img, .hero-foto .vazio {
-    display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
     border-radius: 20px; background: var(--areia-2);
   }
   .hero-foto .vazio { display: grid; place-items: center; color: var(--tinta-2); font-style: italic; text-align: center; padding: 1rem; }
@@ -177,7 +178,10 @@
     .mapa { aspect-ratio: 16 / 9; max-height: 340px; }
 
     .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-foto img, .hero-foto .vazio { aspect-ratio: 16 / 10; max-height: 380px; }
+    .hero-foto { min-height: 0; }
+    .hero-foto img, .hero-foto .vazio {
+      position: static; height: auto; aspect-ratio: 16 / 10; max-height: 380px; display: block;
+    }
   }
 
   /* celular: empilhado */
