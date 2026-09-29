@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#FFFFFF">
+<!-- logo e icone tirados do site antigo da loja (Web Archive, fev/2025). Pedir o arquivo original na visita. -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icone-180.png">
 <title>Bicho é o Bicho Pet Shop | Banho e tosa em Cravinhos, SP</title>
 <meta name="description" content="Pet shop em Cravinhos desde 2010: banho e tosa, hidratação, táxi dog, ração e acessórios. Monte o pedido e agende pelo WhatsApp.">
 <!-- DEMO: remover a linha abaixo quando publicar no dominio definitivo do cliente -->
@@ -97,6 +100,9 @@
   .topo { padding: .6rem 0; border-bottom: 1px solid var(--linha); }
   .topo .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; }
   .marca { display: inline-block; padding: .7rem 0; font-size: 1.7rem; line-height: 1; color: var(--vermelho); text-decoration: none; }
+  /* logo oficial no cabecalho; no rodape escuro fica o nome escrito */
+  .logo { display: block; padding: .25rem 0; }
+  .logo img { display: block; width: auto; height: 80px; }
   .topo ul { list-style: none; display: flex; gap: 1.75rem; font-weight: 700; }
   .topo nav a { display: inline-block; padding: .7rem 0; text-decoration: none; color: var(--tinta-2); transition: color .25s ease; }
   .topo nav a:hover { color: var(--azul); text-decoration: underline; text-underline-offset: 5px; }
@@ -287,6 +293,7 @@
   @media (max-width: 640px) {
     body { font-size: 1.1875rem; }
     .topo nav { display: none; }
+    .logo img { height: 64px; }
     .hero { padding: 1.75rem 0 3rem; }
     .hero .lead { font-size: 1.2rem; }
     .botoes .btn { flex: 1 1 100%; }
@@ -358,7 +365,7 @@
 
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="#" translate="no">Bicho é o Bicho</a>
+    <a class="logo" href="#"><img src="logo.webp" width="140" height="80" alt="Bicho é o Bicho Pet Shop"></a>
     <nav aria-label="Principal">
       <ul>
         <li><a href="#pedido">Agendar</a></li>
